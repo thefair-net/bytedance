@@ -1,8 +1,9 @@
 <?php
+
 /*
  * This file is part of the overtrue/wechat.
  *
- * (c) overtrue <i@overtrue.me>
+ * (c) surpaimb <surpaimb@126.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
@@ -13,19 +14,27 @@ namespace Surpaimb\ByteDance;
 /**
  * Class Factory.
  *
- * @method static \Surpaimb\ByteDance\Application    bytedance(array $config)
+ * @method static \Surpaimb\ByteDance\Payment\Application            payment(array $config)
+ * @method static \Surpaimb\ByteDance\MiniProgram\Application        miniProgram(array $config)
+ * @method static \Surpaimb\ByteDance\OpenPlatform\Application       openPlatform(array $config)
+ * @method static \Surpaimb\ByteDance\OfficialAccount\Application    officialAccount(array $config)
+ * @method static \Surpaimb\ByteDance\BasicService\Application       basicService(array $config)
+ * @method static \Surpaimb\ByteDance\Work\Application               work(array $config)
+ * @method static \Surpaimb\ByteDance\OpenWork\Application           openWork(array $config)
+ * @method static \Surpaimb\ByteDance\MicroMerchant\Application      microMerchant(array $config)
  */
 class Factory
 {
     /**
-     * @param array $config
+     * @param string $name
+     * @param array  $config
      *
-     * @return \Surpaimb\ByteDance\Application
+     * @return \Surpaimb\ByteDance\Kernel\ServiceContainer
      */
     public static function make($name, array $config)
     {
         $namespace = Kernel\Support\Str::studly($name);
-        $application = "\\Surpaimb\\ByteDance\\{$namespace}\\Application";
+        $application = "\\Surpaimb\ByteDance\\{$namespace}\\Application";
 
         return new $application($config);
     }

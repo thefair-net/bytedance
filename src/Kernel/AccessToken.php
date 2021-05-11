@@ -3,7 +3,7 @@
 /*
  * This file is part of the overtrue/wechat.
  *
- * (c) overtrue <i@overtrue.me>
+ * (c) surpaimb <surpaimb@126.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
@@ -23,7 +23,7 @@ use Psr\Http\Message\ResponseInterface;
 /**
  * Class AccessToken.
  *
- * @author overtrue <i@overtrue.me>
+ * @author surpaimb <surpaimb@126.com>
  */
 abstract class AccessToken implements AccessTokenInterface
 {
@@ -63,7 +63,7 @@ abstract class AccessToken implements AccessTokenInterface
     /**
      * @var string
      */
-    protected $cachePrefix = 'easywechat.kernel.access_token.';
+    protected $cachePrefix = 'surpaimb.bytedance.kernel.access_token.';
 
     /**
      * AccessToken constructor.
@@ -199,7 +199,6 @@ abstract class AccessToken implements AccessTokenInterface
         parse_str($request->getUri()->getQuery(), $query);
 
         $query = http_build_query(array_merge($this->getQuery(), $query));
-
         return $request->withUri($request->getUri()->withQuery($query));
     }
 
@@ -241,7 +240,7 @@ abstract class AccessToken implements AccessTokenInterface
      * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
      * @throws \Surpaimb\ByteDance\Kernel\Exceptions\RuntimeException
      */
-    protected function getQuery(): array
+    public function getQuery(): array
     {
         return [$this->queryName ?? $this->tokenKey => $this->getToken()[$this->tokenKey]];
     }

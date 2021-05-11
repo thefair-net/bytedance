@@ -3,7 +3,7 @@
 /*
  * This file is part of the overtrue/wechat.
  *
- * (c) overtrue <i@overtrue.me>
+ * (c) surpaimb <surpaimb@126.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
@@ -30,7 +30,7 @@ use Symfony\Component\HttpFoundation\Response;
  * 1. url 里的 signature 只是将 token+nonce+timestamp 得到的签名，只是用于验证当前请求的，在公众号环境下一直有
  * 2. 企业号消息发送时是没有的，因为固定为完全模式，所以 url 里不会存在 signature, 只有 msg_signature 用于解密消息的
  *
- * @author overtrue <i@overtrue.me>
+ * @author surpaimb <surpaimb@126.com>
  */
 class ServerGuard
 {

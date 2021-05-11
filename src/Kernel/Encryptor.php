@@ -3,7 +3,7 @@
 /*
  * This file is part of the overtrue/wechat.
  *
- * (c) overtrue <i@overtrue.me>
+ * (c) surpaimb <surpaimb@126.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
@@ -20,7 +20,7 @@ use function Surpaimb\ByteDance\Kernel\Support\str_random;
 /**
  * Class Encryptor.
  *
- * @author overtrue <i@overtrue.me>
+ * @author surpaimb <surpaimb@126.com>
  */
 class Encryptor
 {
@@ -107,7 +107,7 @@ class Encryptor
                 $xml,
                 $this->aesKey,
                 substr($this->aesKey, 0, 16),
-                OPENSSL_NO_PADDING
+                OPENSSL_RAW_DATA | OPENSSL_ZERO_PADDING
             ));
             // @codeCoverageIgnoreStart
         } catch (Throwable $e) {
@@ -153,7 +153,7 @@ class Encryptor
             base64_decode($content, true),
             $this->aesKey,
             substr($this->aesKey, 0, 16),
-            OPENSSL_NO_PADDING
+            OPENSSL_RAW_DATA | OPENSSL_ZERO_PADDING
         );
         $result = $this->pkcs7Unpad($decrypted);
         $content = substr($result, 16, strlen($result));

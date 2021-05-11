@@ -3,7 +3,7 @@
 /*
  * This file is part of the overtrue/wechat.
  *
- * (c) overtrue <i@overtrue.me>
+ * (c) surpaimb <surpaimb@126.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
@@ -23,7 +23,7 @@ use Psr\Log\LogLevel;
 /**
  * Class BaseClient.
  *
- * @author overtrue <i@overtrue.me>
+ * @author surpaimb <surpaimb@126.com>
  */
 class BaseClient
 {
@@ -56,6 +56,11 @@ class BaseClient
         $this->accessToken = $accessToken ?? $this->app['access_token'];
     }
 
+    public function withCommonParams(array $data =[])
+    {
+        return array_merge(['app_id'=>$this->app['config']['app_id']],$this->accessToken->getQuery(), $data);
+    }
+
     /**
      * GET request.
      *
@@ -85,6 +90,7 @@ class BaseClient
      */
     public function httpPost(string $url, array $data = [])
     {
+        $data = $this->withCommonParams($data);
         return $this->request($url, 'POST', ['form_params' => $data]);
     }
 
@@ -102,6 +108,7 @@ class BaseClient
      */
     public function httpPostJson(string $url, array $data = [], array $query = [])
     {
+        $data = $this->withCommonParams($data);
         return $this->request($url, 'POST', ['query' => $query, 'json' => $data]);
     }
 
@@ -232,7 +239,6 @@ class BaseClient
                 if ($this->accessToken) {
                     $request = $this->accessToken->applyToRequest($request, $options);
                 }
-
                 return $handler($request, $options);
             };
         };
