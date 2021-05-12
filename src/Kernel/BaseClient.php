@@ -61,6 +61,16 @@ class BaseClient
         return array_merge(['app_id'=>$this->app['config']['app_id']],$this->accessToken->getQuery(), $data);
     }
 
+    public function withAccessToken(array $data = [])
+    {
+        return array_merge($this->accessToken->getQuery(), $data);
+    }
+
+    public function withAppId(array $data = [])
+    {
+        return array_merge(['app_id'=>$this->app['config']['app_id']],$data);
+    }
+
     /**
      * GET request.
      *
@@ -90,7 +100,7 @@ class BaseClient
      */
     public function httpPost(string $url, array $data = [])
     {
-        $data = $this->withCommonParams($data);
+        // $data = $this->withCommonParams($data);
         return $this->request($url, 'POST', ['form_params' => $data]);
     }
 
@@ -108,7 +118,7 @@ class BaseClient
      */
     public function httpPostJson(string $url, array $data = [], array $query = [])
     {
-        $data = $this->withCommonParams($data);
+        // $data = $this->withCommonParams($data);
         return $this->request($url, 'POST', ['query' => $query, 'json' => $data]);
     }
 

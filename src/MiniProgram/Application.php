@@ -73,6 +73,7 @@ class Application extends ServiceContainer
         Live\ServiceProvider::class,
         Broadcast\ServiceProvider::class,
         UrlScheme\ServiceProvider::class,
+        Payment\ServiceProvider::class,
         // Base services
         BasicService\Media\ServiceProvider::class,
         BasicService\ContentSecurity\ServiceProvider::class,

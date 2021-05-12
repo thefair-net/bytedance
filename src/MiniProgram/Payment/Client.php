@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\MiniProgram\SubscribeMessage;
+namespace Surpaimb\ByteDance\MiniProgram\Payment;
 
 use Surpaimb\ByteDance\Kernel\BaseClient;
 use Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException;
@@ -22,20 +22,31 @@ use ReflectionClass;
  */
 class Client extends BaseClient
 {
+
+    protected $paysecret = '';
+
     /**
      * {@inheritdoc}.
      */
     protected $message = [
-        'open_id' => '',
-        'tpl_id' => '',
-        'page' => '',
-        'data' => [],
+        'out_order_no' => '',
+        'total_amount' => '',
+        'subject' => '',
+        'body' => '',
+        'valid_time' => '',
+        'sign' => '',
+        'cp_extra' => '',
+        'notify_url' => '',
+        'thirdparty_id' => '',
+        'disable_msg' => '',
+        'msg_page' => '',
+        'store_uid' => '',
     ];
 
     /**
      * {@inheritdoc}.
      */
-    protected $required = ['open_id', 'tpl_id', 'data'];
+    protected $required = ['out_order_no', 'total_amount', 'subject', 'body', 'valid_time'];
 
     /**
      * Send a template message.
@@ -48,15 +59,33 @@ class Client extends BaseClient
      * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function send(array $data = [])
+    public function unify(array $data = [])
     {
         $params = $this->formatMessage($data);
 
         $this->restoreMessage();
 
-        $params = $this->withCommonParams($params);
-        
-        return $this->httpPostJson('api/apps/subscribe_notification/developer/v1/notify', $params);
+        $params = $this->withAppId($params);
+
+        $params['sign'] = $this->getSign($params);
+        // var_dump($params);
+        return $this->httpPostJson('api/apps/ecpay/v1/create_order', $params);
+    }
+
+    public function getSign(array $params)
+    {
+        unset($params["sign"]);
+        unset($params["app_id"]);
+        unset($params["thirdparty_id"]);
+        $paramArray = [];
+        foreach ($params as $param) {
+            if (trim($param))
+                $paramArray[] = trim($param);
+        }
+        $paramArray[] = trim($this->app['config']['pay_secret']);
+        sort($paramArray, 2);
+        $signStr = trim(implode('&', $paramArray));
+        return md5($signStr);
     }
 
     /**
@@ -69,16 +98,19 @@ class Client extends BaseClient
     protected function formatMessage(array $data = [])
     {
         $params = array_merge($this->message, $data);
-
+        $rs = [];
         foreach ($params as $key => $value) {
             if (in_array($key, $this->required, true) && empty($value) && empty($this->message[$key])) {
                 throw new InvalidArgumentException(sprintf('Attribute "%s" can not be empty!', $key));
             }
 
-            $params[$key] = empty($value) ? $this->message[$key] : $value;
+            $val = empty($value) ? $this->message[$key] : $value;
+            if(!empty($val)){
+                $rs[$key] = $val;
+            }
         }
 
-        return $params;
+        return $rs;
     }
 
     /**
