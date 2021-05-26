@@ -77,6 +77,7 @@ class Application extends ServiceContainer
         // Base services
         BasicService\Media\ServiceProvider::class,
         BasicService\ContentSecurity\ServiceProvider::class,
+        Content\ServiceProvider::class,
     ];
 
     /**

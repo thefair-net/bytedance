@@ -56,9 +56,9 @@ class BaseClient
         $this->accessToken = $accessToken ?? $this->app['access_token'];
     }
 
-    public function withCommonParams(array $data =[])
+    public function withCommonParams(array $data = [])
     {
-        return array_merge(['app_id'=>$this->app['config']['app_id']],$this->accessToken->getQuery(), $data);
+        return array_merge(['app_id' => $this->app['config']['app_id']], $this->accessToken->getQuery(), $data);
     }
 
     public function withAccessToken(array $data = [])
@@ -68,7 +68,7 @@ class BaseClient
 
     public function withAppId(array $data = [])
     {
-        return array_merge(['app_id'=>$this->app['config']['app_id']],$data);
+        return array_merge(['app_id' => $this->app['config']['app_id']], $data);
     }
 
     /**
@@ -122,6 +122,26 @@ class BaseClient
         return $this->request($url, 'POST', ['query' => $query, 'json' => $data]);
     }
 
+
+        /**
+     * JSON request.
+     *
+     * @param string $url
+     * @param array  $data
+     * @param array  $query
+     *
+     * @return \Psr\Http\Message\ResponseInterface|\Surpaimb\ByteDance\Kernel\Support\Collection|array|object|string
+     *
+     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function httpPostWithToken(string $url, array $data = [], array $query = [])
+    {
+        // $data = $this->withCommonParams($data);
+        $token = $this->accessToken->getQuery();
+        return $this->request($url, 'POST', ['query' => $query, 'json' => $data, 'headers' => ['X-Token' => $token && $token['access_token'] ? $token['access_token'] : '']]);
+    }
+
     /**
      * Upload file.
      *
@@ -142,7 +162,7 @@ class BaseClient
 
         if (isset($form['filename'])) {
             $headers = [
-                'Content-Disposition' => 'form-data; name="media"; filename="'.$form['filename'].'"'
+                'Content-Disposition' => 'form-data; name="media"; filename="' . $form['filename'] . '"'
             ];
         }
 
@@ -201,7 +221,6 @@ class BaseClient
         if (empty($this->middlewares)) {
             $this->registerHttpMiddlewares();
         }
-
         $response = $this->performRequest($url, $method, $options);
 
         $this->app->events->dispatch(new Events\HttpResponseCreated($response));
