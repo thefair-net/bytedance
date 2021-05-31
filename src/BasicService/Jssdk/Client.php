@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the overtrue/wechat.
+ * This file is part of the surpaimb/bytedance.
  *
  * (c) surpaimb <surpaimb@126.com>
  *
@@ -99,7 +99,7 @@ class Client extends BaseClient
      */
     public function getTicket(bool $refresh = false, string $type = 'jsapi'): array
     {
-        $cacheKey = sprintf('easywechat.basic_service.jssdk.ticket.%s.%s', $type, $this->getAppId());
+        $cacheKey = sprintf('bytedance.basic_service.jssdk.ticket.%s.%s', $type, $this->getAppId());
 
         if (!$refresh && $this->getCache()->has($cacheKey)) {
             return $this->getCache()->get($cacheKey);

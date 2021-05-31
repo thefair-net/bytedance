@@ -4,9 +4,11 @@ namespace Surpaimb\ByteDance;
 
 use Surpaimb\ByteDance\Factory;
 use Surpaimb\ByteDance\MiniProgram\Application as MiniProgram;
+use Surpaimb\ByteDance\Douyin\Application as DouyinProgram;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 use Illuminate\Foundation\Application as LaravelApplication;
 use Laravel\Lumen\Application as LumenApplication;
+
 class ServiceProvider extends LaravelServiceProvider
 {
     protected $defer = true;
@@ -43,6 +45,7 @@ class ServiceProvider extends LaravelServiceProvider
 
         $apps = [
             'mini_program' => MiniProgram::class,
+            'douyin' => DouyinProgram::class,
         ];
 
         foreach ($apps as $name => $class) {

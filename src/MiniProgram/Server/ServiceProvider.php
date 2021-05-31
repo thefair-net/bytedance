@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the overtrue/wechat.
+ * This file is part of the surpaimb/bytedance.
  *
  * (c) surpaimb <surpaimb@126.com>
  *
@@ -12,8 +12,8 @@
 namespace Surpaimb\ByteDance\MiniProgram\Server;
 
 use Surpaimb\ByteDance\MiniProgram\Encryptor;
-use Surpaimb\ByteDance\OfficialAccount\Server\Guard;
-use Surpaimb\ByteDance\OfficialAccount\Server\Handlers\EchoStrHandler;
+use Surpaimb\ByteDance\Douyin\Server\Guard;
+use Surpaimb\ByteDance\Douyin\Server\Handlers\EchoStrHandler;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 

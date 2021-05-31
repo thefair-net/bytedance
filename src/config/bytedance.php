@@ -38,11 +38,20 @@ return [
     ],
 
     'mini_program' => [
-         'default' => [
-             'app_id'  => env('BYTEDANCE_MINI_PROGRAM_APPID', ''),
-             'secret'  => env('BYTEDANCE_MINI_PROGRAM_SECRET', ''),
-             'pay_secret' => env('BYTEDANCE_MINI_PROGRAM_PAYMENT_SECRET',''),
-             'pay_token' => env('BYTEDANCE_MINI_PROGRAM_PAYMENT_TOKEN',''),
-         ],
-     ],
+        'default' => [
+            'app_id'  => env('BYTEDANCE_MINI_PROGRAM_APPID', ''),
+            'secret'  => env('BYTEDANCE_MINI_PROGRAM_SECRET', ''),
+            'pay_secret' => env('BYTEDANCE_MINI_PROGRAM_PAYMENT_SECRET', ''),
+            'pay_token' => env('BYTEDANCE_MINI_PROGRAM_PAYMENT_TOKEN', ''),
+        ],
+    ],
+    'douyin' => [
+        'default' => [
+            'client_key'  => env('BYTEDANCE_MINI_PROGRAM_APPID', ''),
+            'client_secret'  => env('BYTEDANCE_MINI_PROGRAM_SECRET', ''),
+            'redirect_url'  => env('BYTEDANCE_MINI_PROGRAM_REDIRECT_URL', ''),
+            'pay_secret' => env('BYTEDANCE_MINI_PROGRAM_PAYMENT_SECRET', ''),
+            'pay_token' => env('BYTEDANCE_MINI_PROGRAM_PAYMENT_TOKEN', ''),
+        ],
+    ],
 ];

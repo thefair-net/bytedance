@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the overtrue/wechat.
+ * This file is part of the surpaimb/bytedance.
  *
  * (c) surpaimb <surpaimb@126.com>
  *

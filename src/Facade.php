@@ -37,4 +37,13 @@ class Facade extends LaravelFacade
     {
         return $name ? app('bytedance.mini_program.'.$name) : app('bytedance.mini_program');
     }
+
+    /**
+     * @return \Surpaimb\ByteDance\Douyin\Application
+     */
+    public static function douyin($name = '')
+    {
+        return $name ? app('bytedance.douyin.'.$name) : app('bytedance.douyin');
+    }
+
 }

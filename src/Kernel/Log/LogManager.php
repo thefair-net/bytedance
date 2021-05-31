@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the overtrue/wechat.
+ * This file is part of the surpaimb/bytedance.
  *
  * (c) surpaimb <surpaimb@126.com>
  *
@@ -184,7 +184,7 @@ class LogManager implements LoggerInterface
     protected function createEmergencyLogger()
     {
         return new Monolog('Surpaimb\ByteDance', $this->prepareHandlers([new StreamHandler(
-            \sys_get_temp_dir().'/easywechat/easywechat.log',
+            \sys_get_temp_dir().'/bytedance/bytedance.log',
             $this->level(['level' => 'debug'])
         )]));
     }

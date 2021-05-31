@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the overtrue/wechat.
+ * This file is part of the surpaimb/bytedance.
  *
  * (c) surpaimb <surpaimb@126.com>
  *
@@ -17,7 +17,7 @@ namespace Surpaimb\ByteDance;
  * @method static \Surpaimb\ByteDance\Payment\Application            payment(array $config)
  * @method static \Surpaimb\ByteDance\MiniProgram\Application        miniProgram(array $config)
  * @method static \Surpaimb\ByteDance\OpenPlatform\Application       openPlatform(array $config)
- * @method static \Surpaimb\ByteDance\OfficialAccount\Application    officialAccount(array $config)
+ * @method static \Surpaimb\ByteDance\Douyin\Application             douyin(array $config)
  * @method static \Surpaimb\ByteDance\BasicService\Application       basicService(array $config)
  * @method static \Surpaimb\ByteDance\Work\Application               work(array $config)
  * @method static \Surpaimb\ByteDance\OpenWork\Application           openWork(array $config)
