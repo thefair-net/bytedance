@@ -23,7 +23,7 @@ namespace TheFairLib\ByteDance;
  * @method static \TheFairLib\ByteDance\OpenWork\Application           openWork(array $config)
  * @method static \TheFairLib\ByteDance\MicroMerchant\Application      microMerchant(array $config)
  */
-class Factor
+class Factory
 {
     /**
      * @param string $name
