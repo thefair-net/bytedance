@@ -9,11 +9,11 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Douyin\Micapp;
+namespace TheFairLib\ByteDance\Douyin\Micapp;
 
 use ReflectionClass;
-use Surpaimb\ByteDance\Douyin\TokenClient;
-use Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException;
+use TheFairLib\ByteDance\Douyin\TokenClient;
+use TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException;
 
 /**
  * Class Client.
@@ -31,9 +31,9 @@ class Client extends TokenClient
      * 
      * @param micapp_id	string	输入小程序的micapp_id	tt5daf2b12c2857910	true
      *
-     * @return \Psr\Http\Message\ResponseInterface|\Surpaimb\ByteDance\Kernel\Support\Collection|array|object|string
+     * @return \Psr\Http\Message\ResponseInterface|\TheFairLib\ByteDance\Kernel\Support\Collection|array|object|string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function isLegal(array $data = [])

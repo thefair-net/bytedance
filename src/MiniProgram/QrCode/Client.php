@@ -9,10 +9,10 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\MiniProgram\QrCode;
+namespace TheFairLib\ByteDance\MiniProgram\QrCode;
 
-use Surpaimb\ByteDance\Kernel\BaseClient;
-use Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException;
+use TheFairLib\ByteDance\Kernel\BaseClient;
+use TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException;
 use ReflectionClass;
 
 /**
@@ -44,10 +44,10 @@ class Client extends BaseClient
      *
      * @param array $data
      *
-     * @return \Psr\Http\Message\ResponseInterface|\Surpaimb\ByteDance\Kernel\Support\Collection|array|object|string
+     * @return \Psr\Http\Message\ResponseInterface|\TheFairLib\ByteDance\Kernel\Support\Collection|array|object|string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function create(array $data = [])
@@ -65,7 +65,7 @@ class Client extends BaseClient
      *
      * @return array
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
      */
     protected function formatMessage(array $data = [])
     {
@@ -101,9 +101,9 @@ class Client extends BaseClient
      * @param array       $kidList
      * @param string|null $sceneDesc
      *
-     * @return array|\Surpaimb\ByteDance\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|\TheFairLib\ByteDance\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function addTemplate(string $tid, array $kidList, string $sceneDesc = null)
@@ -119,9 +119,9 @@ class Client extends BaseClient
      *
      * @param string $id
      *
-     * @return array|\Surpaimb\ByteDance\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|\TheFairLib\ByteDance\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function deleteTemplate(string $id)
@@ -134,9 +134,9 @@ class Client extends BaseClient
      *
      * @param string $tid
      *
-     * @return array|\Surpaimb\ByteDance\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|\TheFairLib\ByteDance\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getTemplateKeywords(string $tid)
@@ -151,9 +151,9 @@ class Client extends BaseClient
      * @param int   $start
      * @param int   $limit
      *
-     * @return array|\Surpaimb\ByteDance\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|\TheFairLib\ByteDance\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getTemplateTitles(array $ids, int $start = 0, int $limit = 30)
@@ -167,9 +167,9 @@ class Client extends BaseClient
     /**
      * Get list of personal templates under the current account.
      *
-     * @return array|\Surpaimb\ByteDance\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|\TheFairLib\ByteDance\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getTemplates()
@@ -180,9 +180,9 @@ class Client extends BaseClient
     /**
      * Get the category of the applet account.
      *
-     * @return array|\Surpaimb\ByteDance\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|\TheFairLib\ByteDance\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getCategory()

@@ -1,6 +1,6 @@
 <?php
 
-use Surpaimb\ByteDance\Factory;
+use TheFairLib\ByteDance\Factory;
 use PHPUnit\Framework\TestCase;
 
 class AccessTokenTest extends TestCase

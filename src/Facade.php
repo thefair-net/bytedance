@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance;
+namespace TheFairLib\ByteDance;
 
 use Illuminate\Support\Facades\Facade as LaravelFacade;
 
@@ -31,7 +31,7 @@ class Facade extends LaravelFacade
     }
 
     /**
-     * @return \Surpaimb\ByteDance\MiniProgram\Application
+     * @return \TheFairLib\ByteDance\MiniProgram\Application
      */
     public static function miniProgram($name = '')
     {
@@ -39,7 +39,7 @@ class Facade extends LaravelFacade
     }
 
     /**
-     * @return \Surpaimb\ByteDance\Douyin\Application
+     * @return \TheFairLib\ByteDance\Douyin\Application
      */
     public static function douyin($name = '')
     {

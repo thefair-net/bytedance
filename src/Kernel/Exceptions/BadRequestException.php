@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Exceptions;
+namespace TheFairLib\ByteDance\Kernel\Exceptions;
 
 /**
  * Class BadRequestException.

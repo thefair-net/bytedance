@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Douyin\Video;
+namespace TheFairLib\ByteDance\Douyin\Video;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;

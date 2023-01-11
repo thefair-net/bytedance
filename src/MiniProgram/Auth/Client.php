@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\MiniProgram\Auth;
+namespace TheFairLib\ByteDance\MiniProgram\Auth;
 
-use Surpaimb\ByteDance\Kernel\BaseClient;
+use TheFairLib\ByteDance\Kernel\BaseClient;
 
 /**
  * Class Auth.
@@ -25,9 +25,9 @@ class Client extends BaseClient
      *
      * @param string $code
      *
-     * @return \Psr\Http\Message\ResponseInterface|\Surpaimb\ByteDance\Kernel\Support\Collection|array|object|string
+     * @return \Psr\Http\Message\ResponseInterface|\TheFairLib\ByteDance\Kernel\Support\Collection|array|object|string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
      */
     public function session(string $code, bool $anonymous = false)
     {

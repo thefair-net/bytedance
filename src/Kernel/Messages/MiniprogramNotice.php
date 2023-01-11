@@ -1,6 +1,6 @@
 <?php
 
-namespace Surpaimb\ByteDance\Kernel\Messages;
+namespace TheFairLib\ByteDance\Kernel\Messages;
 
 class MiniprogramNotice extends Message
 {

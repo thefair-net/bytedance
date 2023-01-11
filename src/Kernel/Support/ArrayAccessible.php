@@ -9,11 +9,11 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Support;
+namespace TheFairLib\ByteDance\Kernel\Support;
 
 use ArrayAccess;
 use ArrayIterator;
-use Surpaimb\ByteDance\Kernel\Contracts\Arrayable;
+use TheFairLib\ByteDance\Kernel\Contracts\Arrayable;
 use IteratorAggregate;
 
 /**

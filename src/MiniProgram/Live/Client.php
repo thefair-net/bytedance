@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\MiniProgram\Live;
+namespace TheFairLib\ByteDance\MiniProgram\Live;
 
-use Surpaimb\ByteDance\Kernel\BaseClient;
+use TheFairLib\ByteDance\Kernel\BaseClient;
 
 /**
  * Class Client.
@@ -26,8 +26,8 @@ class Client extends BaseClient
      * @param int $start
      * @param int $limit
      *
-     * @return array|\Surpaimb\ByteDance\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
-     * @deprecated This method has been merged into `\Surpaimb\ByteDance\MiniProgram\Broadcast`
+     * @return array|\TheFairLib\ByteDance\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @deprecated This method has been merged into `\TheFairLib\ByteDance\MiniProgram\Broadcast`
      */
     public function getRooms(int $start = 0, int $limit = 10)
     {
@@ -46,8 +46,8 @@ class Client extends BaseClient
      * @param int $start
      * @param int $limit
      *
-     * @return array|\Surpaimb\ByteDance\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
-     * @deprecated This method has been merged into `\Surpaimb\ByteDance\MiniProgram\Broadcast`
+     * @return array|\TheFairLib\ByteDance\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @deprecated This method has been merged into `\TheFairLib\ByteDance\MiniProgram\Broadcast`
      */
     public function getPlaybacks(int $roomId, int $start = 0, int $limit = 10)
     {

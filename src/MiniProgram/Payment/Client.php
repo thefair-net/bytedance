@@ -9,10 +9,10 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\MiniProgram\Payment;
+namespace TheFairLib\ByteDance\MiniProgram\Payment;
 
-use Surpaimb\ByteDance\Kernel\BaseClient;
-use Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException;
+use TheFairLib\ByteDance\Kernel\BaseClient;
+use TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException;
 use ReflectionClass;
 
 /**
@@ -53,10 +53,10 @@ class Client extends BaseClient
      *
      * @param array $data
      *
-     * @return \Psr\Http\Message\ResponseInterface|\Surpaimb\ByteDance\Kernel\Support\Collection|array|object|string
+     * @return \Psr\Http\Message\ResponseInterface|\TheFairLib\ByteDance\Kernel\Support\Collection|array|object|string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function unify(array $data = [])
@@ -93,7 +93,7 @@ class Client extends BaseClient
      *
      * @return array
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
      */
     protected function formatMessage(array $data = [])
     {

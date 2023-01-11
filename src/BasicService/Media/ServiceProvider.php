@@ -20,7 +20,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\BasicService\Media;
+namespace TheFairLib\ByteDance\BasicService\Media;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;

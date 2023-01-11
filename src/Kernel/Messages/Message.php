@@ -9,12 +9,12 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Messages;
+namespace TheFairLib\ByteDance\Kernel\Messages;
 
-use Surpaimb\ByteDance\Kernel\Contracts\MessageInterface;
-use Surpaimb\ByteDance\Kernel\Exceptions\RuntimeException;
-use Surpaimb\ByteDance\Kernel\Support\XML;
-use Surpaimb\ByteDance\Kernel\Traits\HasAttributes;
+use TheFairLib\ByteDance\Kernel\Contracts\MessageInterface;
+use TheFairLib\ByteDance\Kernel\Exceptions\RuntimeException;
+use TheFairLib\ByteDance\Kernel\Support\XML;
+use TheFairLib\ByteDance\Kernel\Traits\HasAttributes;
 
 /**
  * Class Messages.
@@ -151,7 +151,7 @@ abstract class Message implements MessageInterface
      *
      * @return array
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
      */
     public function transformForJsonRequest(array $appends = [], $withType = true): array
     {
@@ -185,7 +185,7 @@ abstract class Message implements MessageInterface
      *
      * @return array
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
      */
     protected function propertiesToArray(array $data, array $aliases = []): array
     {

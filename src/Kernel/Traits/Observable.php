@@ -9,14 +9,14 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Traits;
+namespace TheFairLib\ByteDance\Kernel\Traits;
 
-use Surpaimb\ByteDance\Kernel\Clauses\Clause;
-use Surpaimb\ByteDance\Kernel\Contracts\EventHandlerInterface;
-use Surpaimb\ByteDance\Kernel\Decorators\FinallyResult;
-use Surpaimb\ByteDance\Kernel\Decorators\TerminateResult;
-use Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException;
-use Surpaimb\ByteDance\Kernel\ServiceContainer;
+use TheFairLib\ByteDance\Kernel\Clauses\Clause;
+use TheFairLib\ByteDance\Kernel\Contracts\EventHandlerInterface;
+use TheFairLib\ByteDance\Kernel\Decorators\FinallyResult;
+use TheFairLib\ByteDance\Kernel\Decorators\TerminateResult;
+use TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException;
+use TheFairLib\ByteDance\Kernel\ServiceContainer;
 
 /**
  * Trait Observable.
@@ -39,9 +39,9 @@ trait Observable
      * @param \Closure|EventHandlerInterface|callable|string $handler
      * @param \Closure|EventHandlerInterface|callable|string $condition
      *
-     * @return \Surpaimb\ByteDance\Kernel\Clauses\Clause
+     * @return \TheFairLib\ByteDance\Kernel\Clauses\Clause
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
      * @throws \ReflectionException
      */
     public function push($handler, $condition = '*')
@@ -73,9 +73,9 @@ trait Observable
      * @param \Closure|EventHandlerInterface|string $handler
      * @param \Closure|EventHandlerInterface|string $condition
      *
-     * @return \Surpaimb\ByteDance\Kernel\Clauses\Clause
+     * @return \TheFairLib\ByteDance\Kernel\Clauses\Clause
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
      * @throws \ReflectionException
      */
     public function unshift($handler, $condition = '*')
@@ -95,9 +95,9 @@ trait Observable
      * @param string                                $condition
      * @param \Closure|EventHandlerInterface|string $handler
      *
-     * @return \Surpaimb\ByteDance\Kernel\Clauses\Clause
+     * @return \TheFairLib\ByteDance\Kernel\Clauses\Clause
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
      * @throws \ReflectionException
      */
     public function observe($condition, $handler)
@@ -109,9 +109,9 @@ trait Observable
      * @param string                                $condition
      * @param \Closure|EventHandlerInterface|string $handler
      *
-     * @return \Surpaimb\ByteDance\Kernel\Clauses\Clause
+     * @return \TheFairLib\ByteDance\Kernel\Clauses\Clause
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
      * @throws \ReflectionException
      */
     public function on($condition, $handler)
@@ -179,7 +179,7 @@ trait Observable
     /**
      * @param mixed $handler
      *
-     * @return \Surpaimb\ByteDance\Kernel\Clauses\Clause
+     * @return \TheFairLib\ByteDance\Kernel\Clauses\Clause
      */
     protected function newClause($handler): Clause
     {
@@ -233,7 +233,7 @@ trait Observable
      *
      * @return \Closure
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
      * @throws \ReflectionException
      */
     protected function makeClosure($handler)
@@ -271,7 +271,7 @@ trait Observable
      *
      * @return array
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
      * @throws \ReflectionException
      */
     protected function resolveHandlerAndCondition($handler, $condition): array

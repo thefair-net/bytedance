@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Douyin\Base;
+namespace TheFairLib\ByteDance\Douyin\Base;
 
-use Surpaimb\ByteDance\Douyin\BaseClient;
+use TheFairLib\ByteDance\Douyin\BaseClient;
 /**
  * Class Client.
  *
@@ -22,9 +22,9 @@ class Client extends BaseClient
 
     /**
      * 
-     * @return \Psr\Http\Message\ResponseInterface|\Surpaimb\ByteDance\Kernel\Support\Collection|array|object|string
+     * @return \Psr\Http\Message\ResponseInterface|\TheFairLib\ByteDance\Kernel\Support\Collection|array|object|string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function item(array $data = [])

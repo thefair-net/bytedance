@@ -2,10 +2,11 @@
 
 📦 字节跳动PHP SDK 抖音小程序、头条小程序开发组件。PHP SDK for bytedance (douyin, tiktok, toutiao)
 
+感谢 `surpaimb/bytedance` 扩展，这个基础上开发的，完善了功能，主要为了兼容 swoole hyperf
 
 ## Requirement
 
-1. PHP >= 7.1
+1. PHP >= 7.4
 2. **[Composer](https://getcomposer.org/)**
 3. openssl 拓展
 
@@ -13,7 +14,7 @@
 ## Installation
 
 ```shell
-$ composer require "surpaimb/bytedance" -vvv
+$ composer require "thefair/bytedance" -vvv
 ```
 
 ## Usage
@@ -23,7 +24,7 @@ $ composer require "surpaimb/bytedance" -vvv
 ```php
 <?php
 
-use Surpaimb\ByteDance\Factory;
+use TheFairLib\ByteDance\Factory;
 
 $options = [
     'app_id'    => 'wx3cf01239eb0exxx',

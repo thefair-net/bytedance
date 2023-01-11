@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel;
+namespace TheFairLib\ByteDance\Kernel;
 
-use Surpaimb\ByteDance\Kernel\Support\Collection;
+use TheFairLib\ByteDance\Kernel\Support\Collection;
 
 /**
  * Class Config.

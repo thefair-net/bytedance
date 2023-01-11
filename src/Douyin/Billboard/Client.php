@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Douyin\Billboard;
+namespace TheFairLib\ByteDance\Douyin\Billboard;
 
-use Surpaimb\ByteDance\Douyin\TokenClient;
+use TheFairLib\ByteDance\Douyin\TokenClient;
 /**
  * Class Client.
  *
@@ -32,9 +32,9 @@ class Client extends TokenClient
      * 该统计数据为离线数据，统计最近24小时；数据产出周期：每天10点前。
      * 
      * 
-     * @return \Psr\Http\Message\ResponseInterface|\Surpaimb\ByteDance\Kernel\Support\Collection|array|object|string
+     * @return \Psr\Http\Message\ResponseInterface|\TheFairLib\ByteDance\Kernel\Support\Collection|array|object|string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function hotVideo()
@@ -54,9 +54,9 @@ class Client extends TokenClient
      * 该统计数据为离线数据；数据产出周期：每天10点前。
      * 
      * 
-     * @return \Psr\Http\Message\ResponseInterface|\Surpaimb\ByteDance\Kernel\Support\Collection|array|object|string
+     * @return \Psr\Http\Message\ResponseInterface|\TheFairLib\ByteDance\Kernel\Support\Collection|array|object|string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function live()

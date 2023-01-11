@@ -9,11 +9,11 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel;
+namespace TheFairLib\ByteDance\Kernel;
 
-use Surpaimb\ByteDance\Kernel\Exceptions\RuntimeException;
-use Surpaimb\ByteDance\Kernel\Support\AES;
-use Surpaimb\ByteDance\Kernel\Support\XML;
+use TheFairLib\ByteDance\Kernel\Exceptions\RuntimeException;
+use TheFairLib\ByteDance\Kernel\Support\AES;
+use TheFairLib\ByteDance\Kernel\Support\XML;
 use Throwable;
 use function Surpaimb\ByteDance\Kernel\Support\str_random;
 
@@ -96,7 +96,7 @@ class Encryptor
      *
      * @return string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\RuntimeException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\RuntimeException
      */
     public function encrypt($xml, $nonce = null, $timestamp = null): string
     {
@@ -139,7 +139,7 @@ class Encryptor
      *
      * @return string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\RuntimeException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\RuntimeException
      */
     public function decrypt($content, $msgSignature, $nonce, $timestamp): string
     {
@@ -187,7 +187,7 @@ class Encryptor
      *
      * @return string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\RuntimeException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\RuntimeException
      */
     public function pkcs7Pad(string $text, int $blockSize): string
     {

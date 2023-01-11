@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\MiniProgram\Auth;
+namespace TheFairLib\ByteDance\MiniProgram\Auth;
 
-use Surpaimb\ByteDance\MiniProgram\Encryptor;
+use TheFairLib\ByteDance\MiniProgram\Encryptor;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 

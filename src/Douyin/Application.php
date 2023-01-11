@@ -9,22 +9,22 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Douyin;
+namespace TheFairLib\ByteDance\Douyin;
 
-use Surpaimb\ByteDance\BasicService;
-use Surpaimb\ByteDance\Kernel\ServiceContainer;
+use TheFairLib\ByteDance\BasicService;
+use TheFairLib\ByteDance\Kernel\ServiceContainer;
 
 /**
  * Class Application.
  *
  * @author surpaimb <surpaimb@126.com>
  *
- * @property \Surpaimb\ByteDance\Douyin\Auth\Client              $auth
- * @property \Surpaimb\ByteDance\Douyin\Fans\Client                  $fans
- * @property \Surpaimb\ByteDance\Douyin\Video\Client                  $video
- * @property \Surpaimb\ByteDance\Douyin\Micapp\Client                  $micapp
- * @property \Surpaimb\ByteDance\Douyin\User\Client                  $user
- * @property \Surpaimb\ByteDance\Douyin\Hot\Client                  $hot
+ * @property \TheFairLib\ByteDance\Douyin\Auth\Client              $auth
+ * @property \TheFairLib\ByteDance\Douyin\Fans\Client                  $fans
+ * @property \TheFairLib\ByteDance\Douyin\Video\Client                  $video
+ * @property \TheFairLib\ByteDance\Douyin\Micapp\Client                  $micapp
+ * @property \TheFairLib\ByteDance\Douyin\User\Client                  $user
+ * @property \TheFairLib\ByteDance\Douyin\Hot\Client                  $hot
  */
 class Application extends ServiceContainer
 {

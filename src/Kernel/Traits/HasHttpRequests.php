@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Traits;
+namespace TheFairLib\ByteDance\Kernel\Traits;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;

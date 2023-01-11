@@ -9,13 +9,13 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Traits;
+namespace TheFairLib\ByteDance\Kernel\Traits;
 
-use Surpaimb\ByteDance\Kernel\Contracts\Arrayable;
-use Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException;
-use Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException;
-use Surpaimb\ByteDance\Kernel\Http\Response;
-use Surpaimb\ByteDance\Kernel\Support\Collection;
+use TheFairLib\ByteDance\Kernel\Contracts\Arrayable;
+use TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException;
+use TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException;
+use TheFairLib\ByteDance\Kernel\Http\Response;
+use TheFairLib\ByteDance\Kernel\Support\Collection;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -29,9 +29,9 @@ trait ResponseCastable
      * @param \Psr\Http\Message\ResponseInterface $response
      * @param string|null                         $type
      *
-     * @return array|\Surpaimb\ByteDance\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|\TheFairLib\ByteDance\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
      */
     protected function castResponseToType(ResponseInterface $response, $type = null)
     {
@@ -60,10 +60,10 @@ trait ResponseCastable
      * @param mixed       $response
      * @param string|null $type
      *
-     * @return array|\Surpaimb\ByteDance\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|\TheFairLib\ByteDance\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
      */
     protected function detectAndCastResponseToType($response, $type = null)
     {

@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Support;
+namespace TheFairLib\ByteDance\Kernel\Support;
 
-use Surpaimb\ByteDance\Kernel\Exceptions\RuntimeException;
+use TheFairLib\ByteDance\Kernel\Exceptions\RuntimeException;
 
 /**
  * Class Str.
@@ -62,7 +62,7 @@ class Str
      *
      * @return string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\RuntimeException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\RuntimeException
      */
     public static function random($length = 16)
     {

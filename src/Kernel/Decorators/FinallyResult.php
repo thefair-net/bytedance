@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Decorators;
+namespace TheFairLib\ByteDance\Kernel\Decorators;
 
 /**
  * Class FinallyResult.

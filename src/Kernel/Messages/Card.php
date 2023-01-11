@@ -19,7 +19,7 @@
  * @see      http://overtrue.me
  */
 
-namespace Surpaimb\ByteDance\Kernel\Messages;
+namespace TheFairLib\ByteDance\Kernel\Messages;
 
 /**
  * Class Card.

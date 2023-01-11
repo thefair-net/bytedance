@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Douyin\Micapp;
+namespace TheFairLib\ByteDance\Douyin\Micapp;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;

@@ -9,11 +9,11 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Http;
+namespace TheFairLib\ByteDance\Kernel\Http;
 
-use Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException;
-use Surpaimb\ByteDance\Kernel\Exceptions\RuntimeException;
-use Surpaimb\ByteDance\Kernel\Support\File;
+use TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException;
+use TheFairLib\ByteDance\Kernel\Exceptions\RuntimeException;
+use TheFairLib\ByteDance\Kernel\Support\File;
 
 /**
  * Class StreamResponse.
@@ -29,8 +29,8 @@ class StreamResponse extends Response
      *
      * @return bool|int
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\RuntimeException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\RuntimeException
      */
     public function save(string $directory, string $filename = '', bool $appendSuffix = true)
     {
@@ -76,8 +76,8 @@ class StreamResponse extends Response
      *
      * @return bool|int
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\RuntimeException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\RuntimeException
      */
     public function saveAs(string $directory, string $filename, bool $appendSuffix = true)
     {

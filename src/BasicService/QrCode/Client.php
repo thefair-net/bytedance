@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\BasicService\QrCode;
+namespace TheFairLib\ByteDance\BasicService\QrCode;
 
-use Surpaimb\ByteDance\Kernel\BaseClient;
+use TheFairLib\ByteDance\Kernel\BaseClient;
 
 /**
  * Class Client.
@@ -38,7 +38,7 @@ class Client extends BaseClient
      *
      * @param string|int $sceneValue
      *
-     * @return \Psr\Http\Message\ResponseInterface|\Surpaimb\ByteDance\Kernel\Support\Collection|array|object|string
+     * @return \Psr\Http\Message\ResponseInterface|\TheFairLib\ByteDance\Kernel\Support\Collection|array|object|string
      */
     public function forever($sceneValue)
     {
@@ -60,7 +60,7 @@ class Client extends BaseClient
      * @param string|int $sceneValue
      * @param int|null   $expireSeconds
      *
-     * @return \Psr\Http\Message\ResponseInterface|\Surpaimb\ByteDance\Kernel\Support\Collection|array|object|string
+     * @return \Psr\Http\Message\ResponseInterface|\TheFairLib\ByteDance\Kernel\Support\Collection|array|object|string
      */
     public function temporary($sceneValue, $expireSeconds = null)
     {
@@ -97,9 +97,9 @@ class Client extends BaseClient
      * @param bool   $temporary
      * @param int    $expireSeconds
      *
-     * @return \Psr\Http\Message\ResponseInterface|\Surpaimb\ByteDance\Kernel\Support\Collection|array|object|string
+     * @return \Psr\Http\Message\ResponseInterface|\TheFairLib\ByteDance\Kernel\Support\Collection|array|object|string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     protected function create($actionName, $actionInfo, $temporary = true, $expireSeconds = null)

@@ -1,11 +1,11 @@
 <?php
 
-use Surpaimb\ByteDance\Factory;
+use TheFairLib\ByteDance\Factory;
 use PHPUnit\Framework\TestCase;
 
 class EncryptorTest extends TestCase
 {
-    use \Surpaimb\ByteDance\Kernel\Traits\InteractsWithCache;
+    use \TheFairLib\ByteDance\Kernel\Traits\InteractsWithCache;
 
     public function testDecrypt()
     {

@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\MiniProgram\Live;
+namespace TheFairLib\ByteDance\MiniProgram\Live;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;

@@ -9,14 +9,14 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel;
+namespace TheFairLib\ByteDance\Kernel;
 
-use Surpaimb\ByteDance\Kernel\Contracts\AccessTokenInterface;
-use Surpaimb\ByteDance\Kernel\Exceptions\HttpException;
-use Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException;
-use Surpaimb\ByteDance\Kernel\Exceptions\RuntimeException;
-use Surpaimb\ByteDance\Kernel\Traits\HasHttpRequests;
-use Surpaimb\ByteDance\Kernel\Traits\InteractsWithCache;
+use TheFairLib\ByteDance\Kernel\Contracts\AccessTokenInterface;
+use TheFairLib\ByteDance\Kernel\Exceptions\HttpException;
+use TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException;
+use TheFairLib\ByteDance\Kernel\Exceptions\RuntimeException;
+use TheFairLib\ByteDance\Kernel\Traits\HasHttpRequests;
+use TheFairLib\ByteDance\Kernel\Traits\InteractsWithCache;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -31,7 +31,7 @@ abstract class AccessToken implements AccessTokenInterface
     use InteractsWithCache;
 
     /**
-     * @var \Surpaimb\ByteDance\Kernel\ServiceContainer
+     * @var \TheFairLib\ByteDance\Kernel\ServiceContainer
      */
     protected $app;
 
@@ -68,7 +68,7 @@ abstract class AccessToken implements AccessTokenInterface
     /**
      * AccessToken constructor.
      *
-     * @param \Surpaimb\ByteDance\Kernel\ServiceContainer $app
+     * @param \TheFairLib\ByteDance\Kernel\ServiceContainer $app
      */
     public function __construct(ServiceContainer $app)
     {
@@ -78,11 +78,11 @@ abstract class AccessToken implements AccessTokenInterface
     /**
      * @return array
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\HttpException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\HttpException
      * @throws \Psr\SimpleCache\InvalidArgumentException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\RuntimeException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\RuntimeException
      */
     public function getRefreshedToken(): array
     {
@@ -94,11 +94,11 @@ abstract class AccessToken implements AccessTokenInterface
      *
      * @return array
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\HttpException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\HttpException
      * @throws \Psr\SimpleCache\InvalidArgumentException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\RuntimeException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\RuntimeException
      */
     public function getToken(bool $refresh = false): array
     {
@@ -123,10 +123,10 @@ abstract class AccessToken implements AccessTokenInterface
      * @param string $token
      * @param int    $lifetime
      *
-     * @return \Surpaimb\ByteDance\Kernel\Contracts\AccessTokenInterface
+     * @return \TheFairLib\ByteDance\Kernel\Contracts\AccessTokenInterface
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\RuntimeException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\RuntimeException
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function setToken(string $token, int $lifetime = 7200): AccessTokenInterface
@@ -144,13 +144,13 @@ abstract class AccessToken implements AccessTokenInterface
     }
 
     /**
-     * @return \Surpaimb\ByteDance\Kernel\Contracts\AccessTokenInterface
+     * @return \TheFairLib\ByteDance\Kernel\Contracts\AccessTokenInterface
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\HttpException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\HttpException
      * @throws \Psr\SimpleCache\InvalidArgumentException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\RuntimeException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\RuntimeException
      */
     public function refresh(): AccessTokenInterface
     {
@@ -163,11 +163,11 @@ abstract class AccessToken implements AccessTokenInterface
      * @param array $credentials
      * @param bool  $toArray
      *
-     * @return \Psr\Http\Message\ResponseInterface|\Surpaimb\ByteDance\Kernel\Support\Collection|array|object|string
+     * @return \Psr\Http\Message\ResponseInterface|\TheFairLib\ByteDance\Kernel\Support\Collection|array|object|string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\HttpException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\HttpException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
      */
     public function requestToken(array $credentials, $toArray = false)
     {
@@ -188,11 +188,11 @@ abstract class AccessToken implements AccessTokenInterface
      *
      * @return \Psr\Http\Message\RequestInterface
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\HttpException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\HttpException
      * @throws \Psr\SimpleCache\InvalidArgumentException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\RuntimeException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\RuntimeException
      */
     public function applyToRequest(RequestInterface $request, array $requestOptions = []): RequestInterface
     {
@@ -209,7 +209,7 @@ abstract class AccessToken implements AccessTokenInterface
      *
      * @return ResponseInterface
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     protected function sendRequest(array $credentials): ResponseInterface
@@ -234,11 +234,11 @@ abstract class AccessToken implements AccessTokenInterface
      *
      * @return array
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\HttpException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\HttpException
      * @throws \Psr\SimpleCache\InvalidArgumentException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\RuntimeException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\RuntimeException
      */
     public function getQuery(): array
     {
@@ -248,7 +248,7 @@ abstract class AccessToken implements AccessTokenInterface
     /**
      * @return string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
      */
     public function getEndpoint(): string
     {

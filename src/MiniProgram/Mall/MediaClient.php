@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\MiniProgram\Mall;
+namespace TheFairLib\ByteDance\MiniProgram\Mall;
 
-use Surpaimb\ByteDance\Kernel\BaseClient;
+use TheFairLib\ByteDance\Kernel\BaseClient;
 
 /**
  * Class Client.
@@ -27,7 +27,7 @@ class MediaClient extends BaseClient
      *
      * @return mixed
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function import($params)

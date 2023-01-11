@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\MiniProgram\SubscribeMessage;
+namespace TheFairLib\ByteDance\MiniProgram\SubscribeMessage;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;

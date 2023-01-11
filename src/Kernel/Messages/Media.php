@@ -9,10 +9,10 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Messages;
+namespace TheFairLib\ByteDance\Kernel\Messages;
 
-use Surpaimb\ByteDance\Kernel\Contracts\MediaInterface;
-use Surpaimb\ByteDance\Kernel\Support\Str;
+use TheFairLib\ByteDance\Kernel\Contracts\MediaInterface;
+use TheFairLib\ByteDance\Kernel\Support\Str;
 
 /**
  * Class Media.
@@ -50,7 +50,7 @@ class Media extends Message implements MediaInterface
     /**
      * @return string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
      */
     public function getMediaId(): string
     {

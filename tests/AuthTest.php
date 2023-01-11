@@ -1,5 +1,5 @@
-a<?php
-use Surpaimb\ByteDance\Factory;
+<?php
+use TheFairLib\ByteDance\Factory;
 use PHPUnit\Framework\TestCase;
 
 class ClientTest extends TestCase

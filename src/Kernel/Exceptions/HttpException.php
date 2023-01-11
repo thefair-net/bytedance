@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Exceptions;
+namespace TheFairLib\ByteDance\Kernel\Exceptions;
 
 use Psr\Http\Message\ResponseInterface;
 
@@ -26,7 +26,7 @@ class HttpException extends Exception
     public $response;
 
     /**
-     * @var \Psr\Http\Message\ResponseInterface|\Surpaimb\ByteDance\Kernel\Support\Collection|array|object|string|null
+     * @var \Psr\Http\Message\ResponseInterface|\TheFairLib\ByteDance\Kernel\Support\Collection|array|object|string|null
      */
     public $formattedResponse;
 

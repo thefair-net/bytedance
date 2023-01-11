@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Events;
+namespace TheFairLib\ByteDance\Kernel\Events;
 
-use Surpaimb\ByteDance\Kernel\ServiceContainer;
+use TheFairLib\ByteDance\Kernel\ServiceContainer;
 
 /**
  * Class ApplicationInitialized.
@@ -21,12 +21,12 @@ use Surpaimb\ByteDance\Kernel\ServiceContainer;
 class ApplicationInitialized
 {
     /**
-     * @var \Surpaimb\ByteDance\Kernel\ServiceContainer
+     * @var \TheFairLib\ByteDance\Kernel\ServiceContainer
      */
     public $app;
 
     /**
-     * @param \Surpaimb\ByteDance\Kernel\ServiceContainer $app
+     * @param \TheFairLib\ByteDance\Kernel\ServiceContainer $app
      */
     public function __construct(ServiceContainer $app)
     {

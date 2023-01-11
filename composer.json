@@ -1,11 +1,15 @@
 {
-    "name": "surpaimb\/bytedance",
+    "name": "thefair/bytedance",
     "description": "sdk for bytedance (douyin, toutiao, huoshan, xigua)",
     "license": "MIT",
     "authors": [
         {
             "name": "Surpaimb",
             "email": "tuple@youshui.ren"
+        },
+        {
+            "name": "lmz",
+            "email": "liumingzhij26@gmail.com"
         }
     ],
     "require": {
@@ -15,8 +19,7 @@
         "ext-simplexml": "*",
         "easywechat-composer/easywechat-composer": "^1.1",
         "guzzlehttp/guzzle": "^6.2 || ^7.0",
-        "monolog/monolog": "^1.22 || ^2.0",
-        "overtrue/socialite": "^3.0",
+        "overtrue/socialite": "~2.0",
         "pimple/pimple": "^3.0",
         "psr/simple-cache": "^1.0",
         "symfony/cache": "^3.3 || ^4.3 || ^5.0",
@@ -28,7 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Surpaimb\\ByteDance\\": "src"
+            "TheFairLib\\ByteDance\\": "src"
         }
     },
     "require-dev": {

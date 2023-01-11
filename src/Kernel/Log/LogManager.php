@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Log;
+namespace TheFairLib\ByteDance\Kernel\Log;
 
-use Surpaimb\ByteDance\Kernel\ServiceContainer;
+use TheFairLib\ByteDance\Kernel\ServiceContainer;
 use InvalidArgumentException;
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\ErrorLogHandler;
@@ -33,7 +33,7 @@ use Psr\Log\LoggerInterface;
 class LogManager implements LoggerInterface
 {
     /**
-     * @var \Surpaimb\ByteDance\Kernel\ServiceContainer
+     * @var \TheFairLib\ByteDance\Kernel\ServiceContainer
      */
     protected $app;
 
@@ -70,7 +70,7 @@ class LogManager implements LoggerInterface
     /**
      * LogManager constructor.
      *
-     * @param \Surpaimb\ByteDance\Kernel\ServiceContainer $app
+     * @param \TheFairLib\ByteDance\Kernel\ServiceContainer $app
      */
     public function __construct(ServiceContainer $app)
     {

@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\BasicService\Url;
+namespace TheFairLib\ByteDance\BasicService\Url;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;

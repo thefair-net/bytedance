@@ -9,11 +9,11 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\MiniProgram\Server;
+namespace TheFairLib\ByteDance\MiniProgram\Server;
 
-use Surpaimb\ByteDance\MiniProgram\Encryptor;
-use Surpaimb\ByteDance\Douyin\Server\Guard;
-use Surpaimb\ByteDance\Douyin\Server\Handlers\EchoStrHandler;
+use TheFairLib\ByteDance\MiniProgram\Encryptor;
+use TheFairLib\ByteDance\Douyin\Server\Guard;
+use TheFairLib\ByteDance\Douyin\Server\Handlers\EchoStrHandler;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 

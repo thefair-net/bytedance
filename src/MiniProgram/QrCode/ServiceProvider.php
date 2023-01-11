@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\MiniProgram\QrCode;
+namespace TheFairLib\ByteDance\MiniProgram\QrCode;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;

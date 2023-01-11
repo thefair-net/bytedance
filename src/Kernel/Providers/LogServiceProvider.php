@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Providers;
+namespace TheFairLib\ByteDance\Kernel\Providers;
 
-use Surpaimb\ByteDance\Kernel\Log\LogManager;
+use TheFairLib\ByteDance\Kernel\Log\LogManager;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 

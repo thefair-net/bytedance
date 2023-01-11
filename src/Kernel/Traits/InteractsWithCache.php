@@ -9,10 +9,10 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Traits;
+namespace TheFairLib\ByteDance\Kernel\Traits;
 
-use Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException;
-use Surpaimb\ByteDance\Kernel\ServiceContainer;
+use TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException;
+use TheFairLib\ByteDance\Kernel\ServiceContainer;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\SimpleCache\CacheInterface as SimpleCacheInterface;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
@@ -36,7 +36,7 @@ trait InteractsWithCache
      *
      * @return \Psr\SimpleCache\CacheInterface
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
      */
     public function getCache()
     {
@@ -63,7 +63,7 @@ trait InteractsWithCache
      *
      * @return $this
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
      */
     public function setCache($cache)
     {

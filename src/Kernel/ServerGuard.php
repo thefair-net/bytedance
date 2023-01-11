@@ -9,19 +9,19 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel;
+namespace TheFairLib\ByteDance\Kernel;
 
-use Surpaimb\ByteDance\Kernel\Contracts\MessageInterface;
-use Surpaimb\ByteDance\Kernel\Exceptions\BadRequestException;
-use Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException;
-use Surpaimb\ByteDance\Kernel\Messages\Message;
-use Surpaimb\ByteDance\Kernel\Messages\News;
-use Surpaimb\ByteDance\Kernel\Messages\NewsItem;
-use Surpaimb\ByteDance\Kernel\Messages\Raw as RawMessage;
-use Surpaimb\ByteDance\Kernel\Messages\Text;
-use Surpaimb\ByteDance\Kernel\Support\XML;
-use Surpaimb\ByteDance\Kernel\Traits\Observable;
-use Surpaimb\ByteDance\Kernel\Traits\ResponseCastable;
+use TheFairLib\ByteDance\Kernel\Contracts\MessageInterface;
+use TheFairLib\ByteDance\Kernel\Exceptions\BadRequestException;
+use TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException;
+use TheFairLib\ByteDance\Kernel\Messages\Message;
+use TheFairLib\ByteDance\Kernel\Messages\News;
+use TheFairLib\ByteDance\Kernel\Messages\NewsItem;
+use TheFairLib\ByteDance\Kernel\Messages\Raw as RawMessage;
+use TheFairLib\ByteDance\Kernel\Messages\Text;
+use TheFairLib\ByteDance\Kernel\Support\XML;
+use TheFairLib\ByteDance\Kernel\Traits\Observable;
+use TheFairLib\ByteDance\Kernel\Traits\ResponseCastable;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -66,7 +66,7 @@ class ServerGuard
     ];
 
     /**
-     * @var \Surpaimb\ByteDance\Kernel\ServiceContainer
+     * @var \TheFairLib\ByteDance\Kernel\ServiceContainer
      */
     protected $app;
 
@@ -75,7 +75,7 @@ class ServerGuard
      *
      * @codeCoverageIgnore
      *
-     * @param \Surpaimb\ByteDance\Kernel\ServiceContainer $app
+     * @param \TheFairLib\ByteDance\Kernel\ServiceContainer $app
      */
     public function __construct(ServiceContainer $app)
     {
@@ -92,8 +92,8 @@ class ServerGuard
      * @return Response
      *
      * @throws BadRequestException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
      */
     public function serve(): Response
     {
@@ -114,7 +114,7 @@ class ServerGuard
     /**
      * @return $this
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\BadRequestException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\BadRequestException
      */
     public function validate()
     {
@@ -148,11 +148,11 @@ class ServerGuard
     /**
      * Get request message.
      *
-     * @return array|\Surpaimb\ByteDance\Kernel\Support\Collection|object|string
+     * @return array|\TheFairLib\ByteDance\Kernel\Support\Collection|object|string
      *
      * @throws BadRequestException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
      */
     public function getMessage()
     {
@@ -183,9 +183,9 @@ class ServerGuard
      *
      * @return \Symfony\Component\HttpFoundation\Response
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\BadRequestException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\BadRequestException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
      */
     protected function resolve(): Response
     {
@@ -217,11 +217,11 @@ class ServerGuard
     /**
      * @param string                                                   $to
      * @param string                                                   $from
-     * @param \Surpaimb\ByteDance\Kernel\Contracts\MessageInterface|string|int $message
+     * @param \TheFairLib\ByteDance\Kernel\Contracts\MessageInterface|string|int $message
      *
      * @return string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
      */
     public function buildResponse(string $to, string $from, $message)
     {
@@ -253,9 +253,9 @@ class ServerGuard
      *
      * @return array
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\BadRequestException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\BadRequestException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
      */
     protected function handleRequest(): array
     {
@@ -277,7 +277,7 @@ class ServerGuard
      *
      * @param string                                        $to
      * @param string                                        $from
-     * @param \Surpaimb\ByteDance\Kernel\Contracts\MessageInterface $message
+     * @param \TheFairLib\ByteDance\Kernel\Contracts\MessageInterface $message
      *
      * @return string
      */
@@ -319,7 +319,7 @@ class ServerGuard
      *
      * @return array
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\BadRequestException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\BadRequestException
      */
     protected function parseMessage($content)
     {

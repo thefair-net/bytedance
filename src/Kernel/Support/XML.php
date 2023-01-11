@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Support;
+namespace TheFairLib\ByteDance\Kernel\Support;
 
 use SimpleXMLElement;
 

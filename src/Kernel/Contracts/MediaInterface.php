@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Contracts;
+namespace TheFairLib\ByteDance\Kernel\Contracts;
 
 /**
  * Interface MediaInterface.

@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Events;
+namespace TheFairLib\ByteDance\Kernel\Events;
 
-use Surpaimb\ByteDance\Kernel\AccessToken;
+use TheFairLib\ByteDance\Kernel\AccessToken;
 
 /**
  * Class AccessTokenRefreshed.
@@ -21,12 +21,12 @@ use Surpaimb\ByteDance\Kernel\AccessToken;
 class AccessTokenRefreshed
 {
     /**
-     * @var \Surpaimb\ByteDance\Kernel\AccessToken
+     * @var \TheFairLib\ByteDance\Kernel\AccessToken
      */
     public $accessToken;
 
     /**
-     * @param \Surpaimb\ByteDance\Kernel\AccessToken $accessToken
+     * @param \TheFairLib\ByteDance\Kernel\AccessToken $accessToken
      */
     public function __construct(AccessToken $accessToken)
     {

@@ -9,14 +9,14 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel;
+namespace TheFairLib\ByteDance\Kernel;
 
-use Surpaimb\ByteDance\Kernel\Providers\ConfigServiceProvider;
-use Surpaimb\ByteDance\Kernel\Providers\EventDispatcherServiceProvider;
-use Surpaimb\ByteDance\Kernel\Providers\ExtensionServiceProvider;
-use Surpaimb\ByteDance\Kernel\Providers\HttpClientServiceProvider;
-use Surpaimb\ByteDance\Kernel\Providers\LogServiceProvider;
-use Surpaimb\ByteDance\Kernel\Providers\RequestServiceProvider;
+use TheFairLib\ByteDance\Kernel\Providers\ConfigServiceProvider;
+use TheFairLib\ByteDance\Kernel\Providers\EventDispatcherServiceProvider;
+use TheFairLib\ByteDance\Kernel\Providers\ExtensionServiceProvider;
+use TheFairLib\ByteDance\Kernel\Providers\HttpClientServiceProvider;
+use TheFairLib\ByteDance\Kernel\Providers\LogServiceProvider;
+use TheFairLib\ByteDance\Kernel\Providers\RequestServiceProvider;
 use EasyWeChatComposer\Traits\WithAggregator;
 use Pimple\Container;
 
@@ -25,7 +25,7 @@ use Pimple\Container;
  *
  * @author surpaimb <surpaimb@126.com>
  *
- * @property \Surpaimb\ByteDance\Kernel\Config                          $config
+ * @property \TheFairLib\ByteDance\Kernel\Config                          $config
  * @property \Symfony\Component\HttpFoundation\Request          $request
  * @property \GuzzleHttp\Client                                 $http_client
  * @property \Monolog\Logger                                    $logger

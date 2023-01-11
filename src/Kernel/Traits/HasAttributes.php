@@ -9,11 +9,11 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Traits;
+namespace TheFairLib\ByteDance\Kernel\Traits;
 
-use Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException;
-use Surpaimb\ByteDance\Kernel\Support\Arr;
-use Surpaimb\ByteDance\Kernel\Support\Str;
+use TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException;
+use TheFairLib\ByteDance\Kernel\Support\Arr;
+use TheFairLib\ByteDance\Kernel\Support\Str;
 
 /**
  * Trait Attributes.
@@ -172,7 +172,7 @@ trait HasAttributes
      *
      * @return array
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
      */
     public function all()
     {
@@ -238,7 +238,7 @@ trait HasAttributes
     /**
      * Check required attributes.
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
      */
     protected function checkRequiredAttributes()
     {

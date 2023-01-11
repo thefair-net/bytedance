@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Contracts;
+namespace TheFairLib\ByteDance\Kernel\Contracts;
 
 use Psr\Http\Message\RequestInterface;
 
@@ -31,7 +31,7 @@ interface AccessTokenInterface
     public function getToken(): array;
 
     /**
-     * @return \Surpaimb\ByteDance\Kernel\Contracts\AccessTokenInterface
+     * @return \TheFairLib\ByteDance\Kernel\Contracts\AccessTokenInterface
      */
     public function refresh(): self;
 

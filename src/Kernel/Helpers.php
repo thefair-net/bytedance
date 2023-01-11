@@ -9,12 +9,12 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel;
+namespace TheFairLib\ByteDance\Kernel;
 
-use Surpaimb\ByteDance\Kernel\Contracts\Arrayable;
-use Surpaimb\ByteDance\Kernel\Exceptions\RuntimeException;
-use Surpaimb\ByteDance\Kernel\Support\Arr;
-use Surpaimb\ByteDance\Kernel\Support\Collection;
+use TheFairLib\ByteDance\Kernel\Contracts\Arrayable;
+use TheFairLib\ByteDance\Kernel\Exceptions\RuntimeException;
+use TheFairLib\ByteDance\Kernel\Support\Arr;
+use TheFairLib\ByteDance\Kernel\Support\Collection;
 
 function data_get($data, $key, $default = null)
 {

@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Providers;
+namespace TheFairLib\ByteDance\Kernel\Providers;
 
 use EasyWeChatComposer\Extension;
 use Pimple\Container;

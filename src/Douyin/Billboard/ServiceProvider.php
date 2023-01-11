@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Douyin\Billboard;
+namespace TheFairLib\ByteDance\Douyin\Billboard;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;

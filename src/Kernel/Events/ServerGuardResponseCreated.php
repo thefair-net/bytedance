@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Events;
+namespace TheFairLib\ByteDance\Kernel\Events;
 
 use Symfony\Component\HttpFoundation\Response;
 

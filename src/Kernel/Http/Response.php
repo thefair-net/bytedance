@@ -9,10 +9,10 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Http;
+namespace TheFairLib\ByteDance\Kernel\Http;
 
-use Surpaimb\ByteDance\Kernel\Support\Collection;
-use Surpaimb\ByteDance\Kernel\Support\XML;
+use TheFairLib\ByteDance\Kernel\Support\Collection;
+use TheFairLib\ByteDance\Kernel\Support\XML;
 use GuzzleHttp\Psr7\Response as GuzzleResponse;
 use Psr\Http\Message\ResponseInterface;
 
@@ -38,7 +38,7 @@ class Response extends GuzzleResponse
     /**
      * @param \Psr\Http\Message\ResponseInterface $response
      *
-     * @return \Surpaimb\ByteDance\Kernel\Http\Response
+     * @return \TheFairLib\ByteDance\Kernel\Http\Response
      */
     public static function buildFromPsrResponse(ResponseInterface $response)
     {
@@ -86,7 +86,7 @@ class Response extends GuzzleResponse
     /**
      * Get collection data.
      *
-     * @return \Surpaimb\ByteDance\Kernel\Support\Collection
+     * @return \TheFairLib\ByteDance\Kernel\Support\Collection
      */
     public function toCollection()
     {

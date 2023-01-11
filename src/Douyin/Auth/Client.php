@@ -9,17 +9,17 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Douyin\Auth;
+namespace TheFairLib\ByteDance\Douyin\Auth;
 
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
-use Surpaimb\ByteDance\Douyin\BaseClient;
-use Surpaimb\ByteDance\Kernel\Traits\HasHttpRequests;
+use TheFairLib\ByteDance\Douyin\BaseClient;
+use TheFairLib\ByteDance\Kernel\Traits\HasHttpRequests;
 use GuzzleHttp\MessageFormatter;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Stream;
 use Overtrue\Socialite\Exceptions\AuthorizeFailedException;
-use Surpaimb\ByteDance\Kernel\Contracts\AccessTokenInterface;
-use Surpaimb\ByteDance\Kernel\ServiceContainer;
+use TheFairLib\ByteDance\Kernel\Contracts\AccessTokenInterface;
+use TheFairLib\ByteDance\Kernel\ServiceContainer;
 
 /**
  * Class AuthorizerAccessToken.

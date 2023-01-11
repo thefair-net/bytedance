@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Messages;
+namespace TheFairLib\ByteDance\Kernel\Messages;
 
 /**
  * Class Voice.

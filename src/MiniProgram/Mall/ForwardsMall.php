@@ -9,27 +9,27 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\MiniProgram\Mall;
+namespace TheFairLib\ByteDance\MiniProgram\Mall;
 
 /**
  * Class Application.
  *
  * @author mingyoung <mingyoungcheung@gmail.com>
  *
- * @property \Surpaimb\ByteDance\MiniProgram\Mall\OrderClient   $order
- * @property \Surpaimb\ByteDance\MiniProgram\Mall\CartClient    $cart
- * @property \Surpaimb\ByteDance\MiniProgram\Mall\ProductClient $product
- * @property \Surpaimb\ByteDance\MiniProgram\Mall\MediaClient   $media
+ * @property \TheFairLib\ByteDance\MiniProgram\Mall\OrderClient   $order
+ * @property \TheFairLib\ByteDance\MiniProgram\Mall\CartClient    $cart
+ * @property \TheFairLib\ByteDance\MiniProgram\Mall\ProductClient $product
+ * @property \TheFairLib\ByteDance\MiniProgram\Mall\MediaClient   $media
  */
 class ForwardsMall
 {
     /**
-     * @var \Surpaimb\ByteDance\Kernel\ServiceContainer
+     * @var \TheFairLib\ByteDance\Kernel\ServiceContainer
      */
     protected $app;
 
     /**
-     * @param \Surpaimb\ByteDance\Kernel\ServiceContainer $app
+     * @param \TheFairLib\ByteDance\Kernel\ServiceContainer $app
      */
     public function __construct($app)
     {

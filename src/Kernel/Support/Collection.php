@@ -9,12 +9,12 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Support;
+namespace TheFairLib\ByteDance\Kernel\Support;
 
 use ArrayAccess;
 use ArrayIterator;
 use Countable;
-use Surpaimb\ByteDance\Kernel\Contracts\Arrayable;
+use TheFairLib\ByteDance\Kernel\Contracts\Arrayable;
 use IteratorAggregate;
 use JsonSerializable;
 use Serializable;
@@ -58,7 +58,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
      *
      * @param array $keys
      *
-     * @return \Surpaimb\ByteDance\Kernel\Support\Collection
+     * @return \TheFairLib\ByteDance\Kernel\Support\Collection
      */
     public function only(array $keys)
     {
@@ -94,7 +94,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
      *
      * @param Collection|array $items
      *
-     * @return \Surpaimb\ByteDance\Kernel\Support\Collection
+     * @return \TheFairLib\ByteDance\Kernel\Support\Collection
      */
     public function merge($items)
     {

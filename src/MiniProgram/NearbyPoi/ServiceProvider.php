@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\MiniProgram\NearbyPoi;
+namespace TheFairLib\ByteDance\MiniProgram\NearbyPoi;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;

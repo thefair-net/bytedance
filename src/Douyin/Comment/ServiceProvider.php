@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Douyin\Comment;
+namespace TheFairLib\ByteDance\Douyin\Comment;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;

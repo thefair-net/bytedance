@@ -9,10 +9,10 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Douyin\Auth;
+namespace TheFairLib\ByteDance\Douyin\Auth;
 
-use Surpaimb\ByteDance\Kernel\AccessToken as BaseAccessToken;
-use Surpaimb\ByteDance\Kernel\Exceptions\HttpException;
+use TheFairLib\ByteDance\Kernel\AccessToken as BaseAccessToken;
+use TheFairLib\ByteDance\Kernel\Exceptions\HttpException;
 
 /**
  * Class ClientToken.
@@ -47,11 +47,11 @@ class ClientToken extends BaseAccessToken
      * @param array $credentials
      * @param bool  $toArray
      *
-     * @return \Psr\Http\Message\ResponseInterface|\Surpaimb\ByteDance\Kernel\Support\Collection|array|object|string
+     * @return \Psr\Http\Message\ResponseInterface|\TheFairLib\ByteDance\Kernel\Support\Collection|array|object|string
      *
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\HttpException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidConfigException
-     * @throws \Surpaimb\ByteDance\Kernel\Exceptions\InvalidArgumentException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\HttpException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException
      */
     public function requestToken(array $credentials, $toArray = false)
     {

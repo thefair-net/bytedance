@@ -9,20 +9,20 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\BasicService;
+namespace TheFairLib\ByteDance\BasicService;
 
-use Surpaimb\ByteDance\Kernel\ServiceContainer;
+use TheFairLib\ByteDance\Kernel\ServiceContainer;
 
 /**
  * Class Application.
  *
  * @author surpaimb <surpaimb@126.com>
  *
- * @property \Surpaimb\ByteDance\BasicService\Jssdk\Client           $jssdk
- * @property \Surpaimb\ByteDance\BasicService\Media\Client           $media
- * @property \Surpaimb\ByteDance\BasicService\QrCode\Client          $qrcode
- * @property \Surpaimb\ByteDance\BasicService\Url\Client             $url
- * @property \Surpaimb\ByteDance\BasicService\ContentSecurity\Client $content_security
+ * @property \TheFairLib\ByteDance\BasicService\Jssdk\Client           $jssdk
+ * @property \TheFairLib\ByteDance\BasicService\Media\Client           $media
+ * @property \TheFairLib\ByteDance\BasicService\QrCode\Client          $qrcode
+ * @property \TheFairLib\ByteDance\BasicService\Url\Client             $url
+ * @property \TheFairLib\ByteDance\BasicService\ContentSecurity\Client $content_security
  */
 class Application extends ServiceContainer
 {

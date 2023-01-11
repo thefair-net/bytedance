@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\BasicService\Jssdk;
+namespace TheFairLib\ByteDance\BasicService\Jssdk;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;

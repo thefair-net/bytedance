@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Douyin\Auth;
+namespace TheFairLib\ByteDance\Douyin\Auth;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;

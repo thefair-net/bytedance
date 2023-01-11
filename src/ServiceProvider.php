@@ -1,10 +1,10 @@
 <?php
 
-namespace Surpaimb\ByteDance;
+namespace TheFairLib\ByteDance;
 
-use Surpaimb\ByteDance\Factory;
-use Surpaimb\ByteDance\MiniProgram\Application as MiniProgram;
-use Surpaimb\ByteDance\Douyin\Application as DouyinProgram;
+use TheFairLib\ByteDance\Factory;
+use TheFairLib\ByteDance\MiniProgram\Application as MiniProgram;
+use TheFairLib\ByteDance\Douyin\Application as DouyinProgram;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 use Illuminate\Foundation\Application as LaravelApplication;
 use Laravel\Lumen\Application as LumenApplication;

@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\Kernel\Clauses;
+namespace TheFairLib\ByteDance\Kernel\Clauses;
 
 /**
  * Class Clause.

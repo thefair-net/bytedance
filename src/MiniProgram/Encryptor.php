@@ -9,12 +9,12 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\MiniProgram;
+namespace TheFairLib\ByteDance\MiniProgram;
 
 use App\Account\Exceptions\MiniProgramLoginException;
-use Surpaimb\ByteDance\Kernel\Encryptor as BaseEncryptor;
-use Surpaimb\ByteDance\Kernel\Exceptions\DecryptException;
-use Surpaimb\ByteDance\Kernel\Support\AES;
+use TheFairLib\ByteDance\Kernel\Encryptor as BaseEncryptor;
+use TheFairLib\ByteDance\Kernel\Exceptions\DecryptException;
+use TheFairLib\ByteDance\Kernel\Support\AES;
 
 
 /**

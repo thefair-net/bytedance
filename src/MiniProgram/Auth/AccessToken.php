@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Surpaimb\ByteDance\MiniProgram\Auth;
+namespace TheFairLib\ByteDance\MiniProgram\Auth;
 
-use Surpaimb\ByteDance\Kernel\AccessToken as BaseAccessToken;
+use TheFairLib\ByteDance\Kernel\AccessToken as BaseAccessToken;
 
 /**
  * Class AccessToken.
