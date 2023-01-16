@@ -29,7 +29,7 @@ class Client extends BaseClient
         'open_id' => '',
         'msg_type' => '',
         'content' => '',
-        'pic_url' => [],
+        'pic_url' => '',
     ];
 
     /**
