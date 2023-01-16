@@ -13,6 +13,7 @@ namespace TheFairLib\ByteDance\MiniProgram;
 
 use TheFairLib\ByteDance\BasicService;
 use TheFairLib\ByteDance\Kernel\ServiceContainer;
+use TheFairLib\ByteDance\MiniProgram\CustomMessage\Client;
 
 /**
  * Class Application.
@@ -45,6 +46,7 @@ use TheFairLib\ByteDance\Kernel\ServiceContainer;
  * @property \TheFairLib\ByteDance\MiniProgram\Broadcast\Client           $broadcast
  * @property \TheFairLib\ByteDance\MiniProgram\UrlScheme\Client           $url_scheme
  * @property \TheFairLib\ByteDance\MiniProgram\Payment\Client $bytedance_payment
+ * @property \TheFairLib\ByteDance\MiniProgram\CustomMessage\Client $custom_message
  */
 class Application extends ServiceContainer
 {
@@ -64,6 +66,7 @@ class Application extends ServiceContainer
         BasicService\ContentSecurity\ServiceProvider::class,
         // for mine
         SubscribeMessage\ServiceProvider::class,
+        CustomMessage\ServiceProvider::class,
         Payment\ServiceProvider::class,
         Content\ServiceProvider::class,
         QrCode\ServiceProvider::class,
