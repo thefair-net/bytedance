@@ -17,7 +17,7 @@ use TheFairLib\ByteDance\Kernel\Traits\HasHttpRequests;
 use GuzzleHttp\MessageFormatter;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Stream;
-use Overtrue\Socialite\Exceptions\AuthorizeFailedException;
+use Overtrue\Socialite\AuthorizeFailedException;
 use TheFairLib\ByteDance\Kernel\Contracts\AccessTokenInterface;
 use TheFairLib\ByteDance\Kernel\ServiceContainer;
 
@@ -76,7 +76,7 @@ class Client extends BaseClient
      * @param  string  $code
      *
      * @return array
-     * @throws \Overtrue\Socialite\Exceptions\AuthorizeFailedException
+     * @throws AuthorizeFailedException
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
      */
@@ -166,7 +166,7 @@ class Client extends BaseClient
      *
      * @return mixed
      * @return array
-     * @throws \Overtrue\Socialite\Exceptions\AuthorizeFailedException
+     * @throws AuthorizeFailedException
      *
      */
     protected function normalizeAccessTokenResponse($response): array
