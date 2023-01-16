@@ -34,16 +34,16 @@ class Client extends BaseClient
      * @var string
      */
     protected $baseUrl = 'https://open.douyin.com/';
-    protected array $scopes = [];
-    protected string $scopeSeparator = ',';
-    protected ?string $state = null;
-    protected array $parameters = [];
-    protected int $encodingType = PHP_QUERY_RFC1738;
-    protected string $openId;
-    protected string $openidKey = 'open_id';
-    protected string $expiresInKey = 'expires_in';
-    protected string $accessTokenKey = 'access_token';
-    protected string $refreshTokenKey = 'refresh_token';
+    protected  $scopes = [];
+    protected  $scopeSeparator = ',';
+    protected  $state = null;
+    protected  $parameters = [];
+    protected  $encodingType = PHP_QUERY_RFC1738;
+    protected  $openId;
+    protected  $openidKey = 'open_id';
+    protected  $expiresInKey = 'expires_in';
+    protected  $accessTokenKey = 'access_token';
+    protected  $refreshTokenKey = 'refresh_token';
 
     /**
      * 生成client_token
@@ -63,12 +63,12 @@ class Client extends BaseClient
         return null;
     }
     /**
-     * 
+     *
      * 获取access_token
      * 该接口用于获取用户授权第三方接口调用的凭证access_token；该接口适用于抖音/头条授权。
-     * 
+     *
      * 注意：
-     * 
+     *
      * 抖音的OAuth API以https://open.douyin.com/开头。
      * 头条的OAuth API以https://open.snssdk.com/开头。
      * 西瓜的OAuth API以https://open-api.ixigua.com/开头。
@@ -94,7 +94,6 @@ class Client extends BaseClient
         $response = \json_decode($response->getBody()->getContents(), true) ?? [];
 
         if (empty($response['data'])) {
-            logger('token from code error', [$response]);
             throw new AuthorizeFailedException('Invalid token response', $response);
         }
 
@@ -204,7 +203,6 @@ class Client extends BaseClient
      */
     protected function getTokenFields($code): array
     {
-        logger('get token field', [$this->app['config']]);
         return [
             'client_key' => $this->app['config']['client_key'],
             'client_secret' => $this->app['config']['client_secret'],
