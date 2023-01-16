@@ -44,7 +44,7 @@ use TheFairLib\ByteDance\Kernel\ServiceContainer;
  * @property \TheFairLib\ByteDance\MiniProgram\Live\Client                $live
  * @property \TheFairLib\ByteDance\MiniProgram\Broadcast\Client           $broadcast
  * @property \TheFairLib\ByteDance\MiniProgram\UrlScheme\Client           $url_scheme
- * @property \TheFairLib\ByteDance\MiniProgram\Payment\Client $payment
+ * @property \TheFairLib\ByteDance\MiniProgram\Payment\Client $bytedance_payment
  */
 class Application extends ServiceContainer
 {
