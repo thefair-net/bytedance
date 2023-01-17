@@ -23,6 +23,17 @@ use ReflectionClass;
 class Client extends BaseClient
 {
 
+
+
+    public static $orderStatusWaitPay = 0;
+    public static $orderStatusPayed = 1;
+    public static $orderStatusCancel = 2;
+    public static $orderStatusOff = 4;
+    public static $orderStatusRefunding = 5;
+    public static $orderStatusRefunded = 6;
+    public static $orderStatusRefundFail = 8;
+
+
     protected $paysecret = '';
 
     /**
