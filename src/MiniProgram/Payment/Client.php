@@ -72,6 +72,19 @@ class Client extends BaseClient
         return $this->httpPostJson('api/apps/ecpay/v1/create_order', $params);
     }
 
+    public function push(string $openId,array $orderDetail,int $orderStatus,int $orderUpdateTime,string $extra=""){
+        $params = [
+            "app_name"=>"douyin",
+            "open_id"=>$openId,
+            "order_detail" => \json_encode($orderDetail),
+            "order_status"=>$orderStatus,
+            "order_type"=>0,
+            "update_time"=> $orderUpdateTime*1000,
+            "extra"=>$extra
+        ];
+        return $this->httpPostJson('/api/apps/order/v2/push', $params);
+    }
+
     public function getSign(array $params)
     {
         unset($params["sign"]);
