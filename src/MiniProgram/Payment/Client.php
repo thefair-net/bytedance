@@ -82,7 +82,9 @@ class Client extends BaseClient
     }
 
     public function push(string $openId,array $orderDetail,int $orderStatus,int $orderUpdateTime,string $extra=""){
+        $token = $this->accessToken->getQuery();
         $params = [
+            "access_token"=>$token?$token['access_token']:"",
             "app_name"=>"douyin",
             "open_id"=>$openId,
             "order_detail" => \json_encode($orderDetail),
@@ -91,7 +93,7 @@ class Client extends BaseClient
             "update_time"=> $orderUpdateTime*1000,
             "extra"=>$extra
         ];
-        return $this->httpPostJson('/api/apps/order/v2/push', $params);
+        return $this->httpPostWithToken('/api/apps/order/v2/push', $params);
     }
 
     public function getSign(array $params)
