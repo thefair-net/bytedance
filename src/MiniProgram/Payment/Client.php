@@ -96,6 +96,32 @@ class Client extends BaseClient
         return $this->httpPostJson('/api/apps/order/v2/push', $params);
     }
 
+    /***
+     * @param string $outOrderNo  商户分配支付单号，标识进行退款的订单
+     * @param string $outRefundNo 商户分配退款号，保证在商户中唯一
+     * @param int $refundAmount 退款金额，单位分
+     * @param string $reason
+     * @param array $extInfo
+     * @param string $notifyUrl
+     * @return array|object|\Psr\Http\Message\ResponseInterface|string|\TheFairLib\ByteDance\Kernel\Support\Collection
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \TheFairLib\ByteDance\Kernel\Exceptions\InvalidConfigException
+     */
+    public function refund(string $outOrderNo,string $outRefundNo,int $refundAmount,string $reason="",array $extInfo=[],string $notifyUrl=""){
+        $params = [
+            "out_order_no"=>$outOrderNo,
+            "out_refund_no"=>$outRefundNo,
+            "refund_amount"=>$refundAmount,
+            "reason"=>$reason,
+            "cp_extra"=>\json_encode($extInfo),
+            "notify_url"=>$notifyUrl,
+        ];
+
+        $params = $this->withAppId($params);
+        $params["sign"] = $this->getSign($params);
+        return $this->httpPostJson('/api/apps/ecpay/v1/create_refund', $params);
+    }
+
     public function getSign(array $params)
     {
         unset($params["sign"]);
