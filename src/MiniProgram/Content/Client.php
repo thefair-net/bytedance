@@ -52,8 +52,17 @@ class Client extends BaseClient
         $this->restoreMessage();
 
         // $params = $this->withCommonParams($params);
-        
+
         return $this->httpPostWithToken('api/v2/tags/text/antidirt', $params);
+    }
+
+    public function checkImg(string $img){
+        $params = [
+            "image"=>$img
+        ];
+        $params = $this->withCommonParams($params);
+        return $this->httpPostJson("api/apps/censor/image",$params);
+
     }
 
     /**
@@ -67,7 +76,7 @@ class Client extends BaseClient
     {
         $params =[];
         foreach ($data as $value) {
-           
+
             $value = [
                 'content' => strval($value),
             ];

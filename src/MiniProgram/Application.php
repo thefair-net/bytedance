@@ -47,6 +47,7 @@ use TheFairLib\ByteDance\MiniProgram\CustomMessage\Client;
  * @property \TheFairLib\ByteDance\MiniProgram\UrlScheme\Client           $url_scheme
  * @property \TheFairLib\ByteDance\MiniProgram\Payment\Client $bytedance_payment
  * @property \TheFairLib\ByteDance\MiniProgram\CustomMessage\Client $custom_message
+ * @property Content\Client $content
  */
 class Application extends ServiceContainer
 {
