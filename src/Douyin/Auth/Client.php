@@ -108,9 +108,11 @@ class Client extends BaseClient
             'post',
             $this->getRefreshTokenUrl(),
             [
-                'client_key' => $this->app['config']['client_key'],
-                'grant_type'=>"refresh_token",
-                "refresh_token"=>$accessToken[$this->refreshTokenKey]
+                "form_params"=>[
+                    'client_key' => $this->app['config']['client_key'],
+                    'grant_type'=>"refresh_token",
+                    "refresh_token"=>$accessToken[$this->refreshTokenKey]
+                ]
             ]
         );
         $response = \json_decode($response->getBody()->getContents(), true) ?? [];
