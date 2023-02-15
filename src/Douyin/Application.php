@@ -12,6 +12,7 @@
 namespace TheFairLib\ByteDance\Douyin;
 
 use TheFairLib\ByteDance\BasicService;
+use TheFairLib\ByteDance\Douyin\Auth\ClientToken;
 use TheFairLib\ByteDance\Kernel\ServiceContainer;
 
 /**

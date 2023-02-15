@@ -11,15 +11,12 @@
 
 namespace TheFairLib\ByteDance\Douyin\Auth;
 
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Illuminate\Auth\Access\AuthorizationException;
 use TheFairLib\ByteDance\Douyin\BaseClient;
-use TheFairLib\ByteDance\Kernel\Traits\HasHttpRequests;
-use GuzzleHttp\MessageFormatter;
-use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Stream;
 use Overtrue\Socialite\AuthorizeFailedException;
-use TheFairLib\ByteDance\Kernel\Contracts\AccessTokenInterface;
-use TheFairLib\ByteDance\Kernel\ServiceContainer;
+use TheFairLib\ByteDance\Kernel\Exceptions\InvalidArgumentException;
+use TheFairLib\ByteDance\Kernel\Traits\InteractsWithCache;
 
 /**
  * Class AuthorizerAccessToken.
@@ -28,8 +25,7 @@ use TheFairLib\ByteDance\Kernel\ServiceContainer;
  */
 class Client extends BaseClient
 {
-
-
+    use InteractsWithCache;
     /**
      * @var string
      */
@@ -39,29 +35,17 @@ class Client extends BaseClient
     protected  $state = null;
     protected  $parameters = [];
     protected  $encodingType = PHP_QUERY_RFC1738;
-    protected  $openId;
     protected  $openidKey = 'open_id';
     protected  $expiresInKey = 'expires_in';
+    protected  $refreshExpiresInKey = "refresh_expires_in";
     protected  $accessTokenKey = 'access_token';
     protected  $refreshTokenKey = 'refresh_token';
+    protected $accessTokenCacheKeyPrefix = "douyin.auth.access_token.%s";
 
-    /**
-     * 生成client_token
-     * 该接口用于获取接口调用的凭证client_access_token，主要用于调用不需要用户授权就可以调用的接口；该接口适用于抖音/头条授权。
-     */
-    public function clientToken()
-    {
-        $params = [
-            'client_key' => $this->app['config']['client_key'],
-            'client_secret' => $this->app['config']['client_secret'],
-            'grant_type' => 'client_credential'
-        ];
-        $rs = $this->httpGet('oauth/client_token/', $params);
-        if($rs && $rs['message'] == 'success'){
-            return $rs['data']['access_token'];
-        }
-        return null;
+    public function getAccessTokenCacheKey(string $openId):string{
+        return sprintf($this->accessTokenCacheKeyPrefix,$openId);
     }
+
     /**
      *
      * 获取access_token
@@ -73,14 +57,14 @@ class Client extends BaseClient
      * 头条的OAuth API以https://open.snssdk.com/开头。
      * 西瓜的OAuth API以https://open-api.ixigua.com/开头。
      * access_token 为用户授权第三方接口调用的凭证，存储在客户端，可能会被窃取，泄漏后可能会发生用户隐私数据泄漏的风险，建议存储在服务端。
-     * @param  string  $code
+     * @param string $code
      *
      * @return array
      * @throws AuthorizeFailedException
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
      */
-    public function tokenFromCode($code): array
+    public function getAccessTokenByCode(string $code): array
     {
         $response = $this->getHttpClient()->request(
             'get',
@@ -90,34 +74,68 @@ class Client extends BaseClient
             ]
         );
 
-        // dd($response->getBody()->getContents());
         $response = \json_decode($response->getBody()->getContents(), true) ?? [];
-
         if (empty($response['data'])) {
             throw new AuthorizeFailedException('Invalid token response', $response);
         }
-
-        // $this->withOpenId($response['data']['open_id']);
-
-        return $this->normalizeAccessTokenResponse($response['data']);
+        if (empty($response["data"]["open_id"])){
+            throw new AuthorizeFailedException('Invalid token response', $response);
+        }
+        $return = $this->normalizeAccessTokenResponse($response['data']);
+        $this->setAccessTokenCache($return["openid"], $return);
+        return $return;
     }
 
 
+    /**
+     * @throws InvalidArgumentException
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     */
+    public function getAccessToken(string $openId):array{
+        $accessToken = $this->getCache()->get($this->getAccessTokenCacheKey($openId));
+        return $accessToken?json_decode($accessToken,true):[];
+    }
+
+    /**
+     * @throws AuthorizeFailedException
+     */
+    public function refreshAccessToken(string $openId):array {
+        $accessToken = $this->getAccessToken($openId);
+        if (!$accessToken){
+            throw new  AuthorizeFailedException("access token empty",["open_id"=>$openId]);
+        }
+        $response = $this->getHttpClient()->request(
+            'post',
+            $this->getRefreshTokenUrl(),
+            [
+                'client_key' => $this->app['config']['client_key'],
+                'grant_type'=>"refresh_token",
+                "refresh_token"=>$accessToken[$this->refreshTokenKey]
+            ]
+        );
+        $response = \json_decode($response->getBody()->getContents(), true) ?? [];
+        $return = $this->normalizeAccessTokenResponse($response);
+        $this->setAccessTokenCache($return["openid"], $return);
+        return $return;
+    }
+    /**
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws InvalidArgumentException
+     */
+    public function setAccessTokenCache(string $openId, array $data):bool{
+        $cache = $this->getCache();
+        return $cache->set($this->getAccessTokenCacheKey($openId),\json_encode($data),$data["expires_in"]??86400);
+    }
     protected function getAuthUrl(): string
     {
-        // return $this->buildAuthUrlFromBase($this->baseUrl . '/platform/oauth/connect/');
         return $this->baseUrl . 'platform/oauth/connect/';
     }
-
+    protected function getRefreshTokenUrl():string{
+        return $this->baseUrl. 'oauth/refresh_token/';
+    }
     protected function getTokenUrl(): string
     {
         return $this->baseUrl . 'oauth/access_token/';
-    }
-
-
-    protected function getClientTokenUrl(): string
-    {
-        return $this->baseUrl . 'oauth/client_token';
     }
 
     /**
@@ -189,11 +207,12 @@ class Client extends BaseClient
         }
 
         return $response + [
-            'openid' => $response[$this->openidKey],
-            'access_token' => $response[$this->accessTokenKey],
-            'refresh_token' => $response[$this->refreshTokenKey] ?? null,
-            'expires_in' => \intval($response[$this->expiresInKey] ?? 0),
-        ];
+                'openid' => $response[$this->openidKey],
+                'access_token' => $response[$this->accessTokenKey],
+                'refresh_token' => $response[$this->refreshTokenKey] ?? null,
+                'expires_in' => \intval($response[$this->expiresInKey] ?? 0),
+                'refresh_expires_in' => \intval($response[$this->refreshExpiresInKey] ?? 0),
+            ];
     }
 
     /**
@@ -201,7 +220,7 @@ class Client extends BaseClient
      *
      * @return array
      */
-    protected function getTokenFields($code): array
+    protected function getTokenFields(string $code): array
     {
         return [
             'client_key' => $this->app['config']['client_key'],
@@ -209,13 +228,5 @@ class Client extends BaseClient
             'code' => $code,
             'grant_type' => 'authorization_code',
         ];
-    }
-
-
-    public function withOpenId(string $openId): self
-    {
-        $this->openId = $openId;
-
-        return $this;
     }
 }
