@@ -114,7 +114,7 @@ class Client extends BaseClient
             ]
         );
         $response = \json_decode($response->getBody()->getContents(), true) ?? [];
-        $return = $this->normalizeAccessTokenResponse($response);
+        $return = $this->normalizeAccessTokenResponse($response['data']);
         $this->setAccessTokenCache($return["openid"], $return);
         return $return;
     }
@@ -213,6 +213,7 @@ class Client extends BaseClient
                 'refresh_token' => $response[$this->refreshTokenKey] ?? null,
                 'expires_in' => \intval($response[$this->expiresInKey] ?? 0),
                 'refresh_expires_in' => \intval($response[$this->refreshExpiresInKey] ?? 0),
+                "expired_time"=> time()+\intval($response[$this->expiresInKey] ?? 0)
             ];
     }
 
