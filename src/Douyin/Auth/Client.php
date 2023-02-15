@@ -208,6 +208,7 @@ class Client extends BaseClient
 
         return $response + [
                 'openid' => $response[$this->openidKey],
+                "open_id"=>$response[$this->openidKey],
                 'access_token' => $response[$this->accessTokenKey],
                 'refresh_token' => $response[$this->refreshTokenKey] ?? null,
                 'expires_in' => \intval($response[$this->expiresInKey] ?? 0),
